@@ -18,6 +18,7 @@ type ReceiverConfig struct {
 	Slack         *SlackConfig         `yaml:"slack"`
 	Kafka         *KafkaConfig         `yaml:"kafka"`
 	Pubsub        *PubsubConfig        `yaml:"pubsub"`
+	Azsb          *AzSbConfig          `yaml:"azsb"`
 	Opscenter     *OpsCenterConfig     `yaml:"opscenter"`
 	Teams         *TeamsConfig         `yaml:"teams"`
 	BigQuery      *BigQueryConfig      `yaml:"bigquery"`
@@ -105,6 +106,10 @@ func (r *ReceiverConfig) GetSink() (Sink, error) {
 
 	if r.EventBridge != nil {
 		return NewEventBridgeSink(r.EventBridge)
+	}
+
+	if r.Azsb != nil {
+		return NewAzSbSink(r.Azsb)
 	}
 
 	return nil, errors.New("unknown sink")
