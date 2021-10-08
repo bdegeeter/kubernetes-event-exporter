@@ -17,6 +17,43 @@ cloud.google.com/go/bigquery
 cloud.google.com/go/pubsub
 cloud.google.com/go/pubsub/apiv1
 cloud.google.com/go/pubsub/internal/distribution
+# github.com/Azure/azure-amqp-common-go/v3 v3.2.1
+github.com/Azure/azure-amqp-common-go/v3
+github.com/Azure/azure-amqp-common-go/v3/aad
+github.com/Azure/azure-amqp-common-go/v3/auth
+github.com/Azure/azure-amqp-common-go/v3/cbs
+github.com/Azure/azure-amqp-common-go/v3/conn
+github.com/Azure/azure-amqp-common-go/v3/internal
+github.com/Azure/azure-amqp-common-go/v3/internal/tracing
+github.com/Azure/azure-amqp-common-go/v3/rpc
+github.com/Azure/azure-amqp-common-go/v3/sas
+github.com/Azure/azure-amqp-common-go/v3/uuid
+# github.com/Azure/azure-service-bus-go v0.11.2
+## explicit
+github.com/Azure/azure-service-bus-go
+github.com/Azure/azure-service-bus-go/atom
+github.com/Azure/azure-service-bus-go/internal
+# github.com/Azure/go-amqp v0.16.0
+github.com/Azure/go-amqp
+github.com/Azure/go-amqp/internal/bitmap
+github.com/Azure/go-amqp/internal/buffer
+github.com/Azure/go-amqp/internal/encoding
+github.com/Azure/go-amqp/internal/frames
+# github.com/Azure/go-autorest v14.2.0+incompatible
+github.com/Azure/go-autorest
+# github.com/Azure/go-autorest/autorest v0.11.18
+github.com/Azure/go-autorest/autorest
+github.com/Azure/go-autorest/autorest/azure
+# github.com/Azure/go-autorest/autorest/adal v0.9.13
+github.com/Azure/go-autorest/autorest/adal
+# github.com/Azure/go-autorest/autorest/date v0.3.0
+github.com/Azure/go-autorest/autorest/date
+# github.com/Azure/go-autorest/autorest/to v0.4.0
+github.com/Azure/go-autorest/autorest/to
+# github.com/Azure/go-autorest/logger v0.2.1
+github.com/Azure/go-autorest/logger
+# github.com/Azure/go-autorest/tracing v0.6.0
+github.com/Azure/go-autorest/tracing
 # github.com/Masterminds/goutils v1.1.0
 ## explicit
 github.com/Masterminds/goutils
@@ -77,6 +114,8 @@ github.com/aws/aws-sdk-go/service/sts
 github.com/aws/aws-sdk-go/service/sts/stsiface
 # github.com/davecgh/go-spew v1.1.1
 github.com/davecgh/go-spew/spew
+# github.com/devigned/tab v0.1.1
+github.com/devigned/tab
 # github.com/eapache/go-resiliency v1.1.0
 github.com/eapache/go-resiliency/breaker
 # github.com/eapache/go-xerial-snappy v0.0.0-20180814174437-776d5712da21
@@ -89,6 +128,8 @@ github.com/elastic/go-elasticsearch/v7
 github.com/elastic/go-elasticsearch/v7/esapi
 github.com/elastic/go-elasticsearch/v7/estransport
 github.com/elastic/go-elasticsearch/v7/internal/version
+# github.com/form3tech-oss/jwt-go v3.2.2+incompatible
+github.com/form3tech-oss/jwt-go
 # github.com/gogo/protobuf v1.3.0
 ## explicit
 github.com/gogo/protobuf/proto
@@ -107,7 +148,7 @@ github.com/golang/protobuf/ptypes/empty
 github.com/golang/protobuf/ptypes/timestamp
 # github.com/golang/snappy v0.0.1
 github.com/golang/snappy
-# github.com/google/go-cmp v0.5.0
+# github.com/google/go-cmp v0.5.1
 github.com/google/go-cmp/cmp
 github.com/google/go-cmp/cmp/internal/diff
 github.com/google/go-cmp/cmp/internal/flags
@@ -147,14 +188,14 @@ github.com/jcmturner/gofork/encoding/asn1
 github.com/jcmturner/gofork/x/crypto/pbkdf2
 # github.com/jmespath/go-jmespath v0.3.0
 github.com/jmespath/go-jmespath
-# github.com/json-iterator/go v1.1.7
-## explicit
+# github.com/json-iterator/go v1.1.9
 github.com/json-iterator/go
 # github.com/jstemmer/go-junit-report v0.9.1
 github.com/jstemmer/go-junit-report
 github.com/jstemmer/go-junit-report/formatter
 github.com/jstemmer/go-junit-report/parser
-# github.com/klauspost/compress v1.8.2
+# github.com/klauspost/compress v1.10.3
+github.com/klauspost/compress/flate
 github.com/klauspost/compress/fse
 github.com/klauspost/compress/huff0
 github.com/klauspost/compress/snappy
@@ -167,6 +208,8 @@ github.com/konsorten/go-windows-terminal-sequences
 # github.com/mitchellh/copystructure v1.0.0
 ## explicit
 github.com/mitchellh/copystructure
+# github.com/mitchellh/mapstructure v1.3.3
+github.com/mitchellh/mapstructure
 # github.com/mitchellh/reflectwalk v1.0.0
 github.com/mitchellh/reflectwalk
 # github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
@@ -205,7 +248,7 @@ github.com/slack-go/slack/slackutilsx
 # github.com/spf13/pflag v1.0.5
 ## explicit
 github.com/spf13/pflag
-# github.com/stretchr/testify v1.5.1
+# github.com/stretchr/testify v1.6.1
 ## explicit
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
@@ -227,10 +270,11 @@ go.opencensus.io/trace
 go.opencensus.io/trace/internal
 go.opencensus.io/trace/propagation
 go.opencensus.io/trace/tracestate
-# golang.org/x/crypto v0.0.0-20191029031824-8986dd9e96cf
-## explicit
+# golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0
 golang.org/x/crypto/md4
 golang.org/x/crypto/pbkdf2
+golang.org/x/crypto/pkcs12
+golang.org/x/crypto/pkcs12/internal/rc2
 golang.org/x/crypto/scrypt
 golang.org/x/crypto/ssh/terminal
 # golang.org/x/lint v0.0.0-20200302205851-738671d3881b
@@ -457,9 +501,11 @@ gopkg.in/jcmturner/rpc.v1/ndr
 # gopkg.in/natefinch/lumberjack.v2 v2.0.0
 ## explicit
 gopkg.in/natefinch/lumberjack.v2
-# gopkg.in/yaml.v2 v2.2.7
+# gopkg.in/yaml.v2 v2.2.8
 ## explicit
 gopkg.in/yaml.v2
+# gopkg.in/yaml.v3 v3.0.0-20200313102051-9f266ea9e77c
+gopkg.in/yaml.v3
 # k8s.io/api v0.0.0-20190819141258-3544db3b9e44
 ## explicit
 k8s.io/api/admissionregistration/v1beta1
@@ -699,5 +745,11 @@ k8s.io/klog
 k8s.io/utils/buffer
 k8s.io/utils/integer
 k8s.io/utils/trace
+# nhooyr.io/websocket v1.8.6
+nhooyr.io/websocket
+nhooyr.io/websocket/internal/bpool
+nhooyr.io/websocket/internal/errd
+nhooyr.io/websocket/internal/wsjs
+nhooyr.io/websocket/internal/xsync
 # sigs.k8s.io/yaml v1.1.0
 sigs.k8s.io/yaml
