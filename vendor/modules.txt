@@ -1,5 +1,4 @@
 # cloud.google.com/go v0.60.0
-## explicit
 cloud.google.com/go
 cloud.google.com/go/civil
 cloud.google.com/go/compute/metadata
@@ -201,8 +200,6 @@ github.com/klauspost/compress/huff0
 github.com/klauspost/compress/snappy
 github.com/klauspost/compress/zstd
 github.com/klauspost/compress/zstd/internal/xxhash
-# github.com/klauspost/cpuid v1.2.3
-## explicit
 # github.com/konsorten/go-windows-terminal-sequences v1.0.1
 github.com/konsorten/go-windows-terminal-sequences
 # github.com/mitchellh/copystructure v1.0.0
