@@ -10,10 +10,9 @@ import (
 )
 
 type AzSbConfig struct {
-	Endpoint string `yaml:"endpoint"`
-	Topic    string `yaml:"topic"`
-	//Subscription string                 `yaml:"subscription"`
-	Layout map[string]interface{} `yaml:"layout"`
+	Endpoint string                 `yaml:"endpoint"`
+	Topic    string                 `yaml:"topic"`
+	Layout   map[string]interface{} `yaml:"layout"`
 }
 
 type AzSbSink struct {
@@ -23,11 +22,6 @@ type AzSbSink struct {
 
 func NewAzSbSink(cfg *AzSbConfig) (Sink, error) {
 	log.Info().Msg("new azure service bus sink")
-	//ctx := context.Background()
-	// sub, err := topic.NewSubscription(cfg.Subscription)
-	// if err != nil {
-	// 	return nil, err
-	// }
 	return &AzSbSink{
 		cfg:    cfg,
 		layout: cfg.Layout,
@@ -35,9 +29,15 @@ func NewAzSbSink(cfg *AzSbConfig) (Sink, error) {
 }
 
 func (azs *AzSbSink) Send(ctx context.Context, ev *kube.EnhancedEvent) error {
+	log.Debug().Msg("Attempting to connect using connection string")
 	ns, err := azsb.NewNamespace(azsb.NamespaceWithConnectionString(azs.cfg.Endpoint))
 	if err != nil {
-		return err
+		log.Debug().Err(err).Msg("Unable to connect to service bus with connection string, attempting environment binding")
+		ns, err = azsb.NewNamespace(azsb.NamespaceWithEnvironmentBinding(azs.cfg.Endpoint))
+		if err != nil {
+			log.Debug().Err(err).Msg("Unable to connect with environment binding")
+			return err
+		}
 	}
 	topic, err := ns.NewTopic(azs.cfg.Topic)
 	if err != nil {
@@ -50,22 +50,18 @@ func (azs *AzSbSink) Send(ctx context.Context, ev *kube.EnhancedEvent) error {
 	} else {
 		res, err := convertLayoutTemplate(azs.layout, ev)
 		if err != nil {
-			log.Debug().Err(err).Msg("Failed to convert event to layout template")
 			return err
 		}
 		str, err := json.Marshal(res)
 		if err != nil {
-			log.Debug().Err(err).Msg("Failed to marshal message data")
 			return err
 		}
 		msg.Data = str
 	}
 	err = topic.Send(ctx, msg)
 	if err != nil {
-		log.Debug().Err(err).Msg("Error sending message on service bus")
 		return err
 	}
-	log.Debug().Msg("Message successfully sent on azure service bus")
 	return nil
 }
 func (azs *AzSbSink) Close() {
