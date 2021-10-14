@@ -3,9 +3,10 @@ package sinks
 import (
 	"bytes"
 	"encoding/json"
+	"text/template"
+
 	"github.com/Masterminds/sprig"
 	"github.com/opsgenie/kubernetes-event-exporter/pkg/kube"
-	"text/template"
 )
 
 func GetString(event *kube.EnhancedEvent, text string) (string, error) {

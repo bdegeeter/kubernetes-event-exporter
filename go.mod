@@ -3,7 +3,6 @@ module github.com/opsgenie/kubernetes-event-exporter
 go 1.16
 
 require (
-	cloud.google.com/go v0.60.0 // indirect
 	cloud.google.com/go/bigquery v1.9.0
 	cloud.google.com/go/pubsub v1.3.1
 	github.com/Azure/azure-service-bus-go v0.11.2
@@ -18,7 +17,6 @@ require (
 	github.com/hashicorp/golang-lru v0.5.3
 	github.com/huandu/xstrings v1.2.0 // indirect
 	github.com/imdario/mergo v0.3.8 // indirect
-	github.com/klauspost/cpuid v1.2.3 // indirect
 	github.com/mitchellh/copystructure v1.0.0 // indirect
 	github.com/opsgenie/opsgenie-go-sdk-v2 v1.0.3
 	github.com/rs/zerolog v1.16.0
